@@ -1,0 +1,18 @@
+
+<article class="clock-component">
+  <div class="hours-container" [ngStyle]="{'transform':rotateZ_hour, 'webkitTransform' : rotateZ_hour}">
+    <!--<div class="hours-container">-->
+    <div class="hours"> </div>
+  </div>
+  <!--<div #minutescontainer id="minutes-container" class="minutes-container" [attr.data-second-angle]="rotateZ2" data-second-angle="rotateZ2" [ngStyle]="{'transform':rotateZ, 'webkitTransform' : rotateZ, 'background-color':'white'}">-->
+  <div class="minutes-container" [ngStyle]="{'transform':rotateZ_minutes, 'webkitTransform' : rotateZ_minutes}">
+    <div class="minutes"> </div>
+  </div>
+  <!--<div class="seconds-container" [ngStyle]="{'background-color':'green'}">-->
+  <div class="seconds-container" [ngStyle]="{'transform':rotateZ_seconds, 'webkitTransform' : rotateZ_seconds}">
+    <div class="seconds"> </div>
+  </div>
+  <div class="centre">
+
+  </div>
+</article>

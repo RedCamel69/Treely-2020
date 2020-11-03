@@ -1,0 +1,102 @@
+﻿
+html {
+    min-height: 100%;
+    position: relative;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+body {
+    font: 19px/1.6 "Open Sans", Ubuntu, "Nimbus Sans L", Avenir, AvenirNext, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.siteheader {
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    font-size: 5em;
+    height: 10vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
+}
+
+    .siteheader h1 {
+        font-weight: 800;
+        font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    }
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    margin-bottom: 20vh;
+    animation: fade-in 1s ease;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+a {
+
+{
+    text-decoration: none;
+}
+
+}
+
+img, iframe {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+ul, ol {
+    padding-left: 2em;
+}
+
+time {
+    font-size: .85em;
+}
+
+
+.post{
+    /*border:solid;
+    border-width:5px;*/
+}
+
+@media only screen and (min-width: 768px) {
+    .post-headline {
+        font-size: 36px;
+    }
+}
+
+.post-headline {
+    font-weight: 800;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
