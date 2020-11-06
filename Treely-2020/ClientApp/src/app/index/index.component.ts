@@ -49,12 +49,12 @@ export class IndexComponent implements OnInit {
   }
 
   onBlur() {
-    console.log('b');
+    //console.log('b');
     this.searchBoxHasFocus = false;
   }
 
   onFocus() {
-    console.log('f');
+   // console.log('f');
     this.searchBoxHasFocus = true;
   }
 
@@ -107,7 +107,7 @@ export class IndexComponent implements OnInit {
 
     ////arrow down
     if (definingSearch && event.code === "ArrowDown") {
-      console.log('down');
+    //  console.log('down');
       console.log(numberOfSuggestions)
 
       if (this.currentSuggestionSelection == -1 || this.currentSuggestionSelection == 8) {

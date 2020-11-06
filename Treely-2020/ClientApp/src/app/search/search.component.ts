@@ -166,6 +166,7 @@ export class SearchComponent implements OnInit {
       data => {
         this.results = JSON.parse(data.toString()) as SearchResponse;
         console.log(data);
+        console.log(this.results);
         if (this.results.webPages == undefined) {
           console.log('some thing gone wrong');
         }

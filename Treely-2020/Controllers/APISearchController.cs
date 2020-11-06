@@ -54,7 +54,7 @@ namespace Treely_2020.Controllers
 
             // https://localhost:44356/apisearch?query=united&mkt=en-gb&count=1&offset=80
 
-            SearchResult result = BingWebSearch(query); //TODO  + "&mkt=en-gb&count=" + count + "&offset=" + offset);
+          // SearchResult result = BingWebSearch(query); //TODO  + "&mkt=en-gb&count=" + count + "&offset=" + offset);
 
 
 
