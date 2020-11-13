@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Treely_2020.Infrastructure;
 using Treely_2020.Models.Services;
 using Treely_2020.Services;
 using WebEssentials.AspNetCore.OutputCaching;
@@ -82,6 +84,9 @@ namespace Treely_2020
             //    pipeline.CompileScssFiles()
             //            .InlineImages(1);
             //});
+
+
+            services.AddDbContext<RegionContext>(options => options.UseSqlite("Data Source=mappy.db"));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

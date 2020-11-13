@@ -22,9 +22,11 @@
     <PackageReference Include="LigerShark.WebOptimizer.Sass" Version="3.0.40-beta" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="WebEssentials.AspNetCore.OutputCaching" Version="1.0.28" />
     <PackageReference Include="WebEssentials.AspNetCore.PWA" Version="1.0.59" />
     <PackageReference Include="WilderMinds.MetaWeblog" Version="1.2.3" />
@@ -46,16 +48,15 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\services\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\css\blog.css" />
     <None Include="wwwroot\css\styles.css" />
     <None Include="wwwroot\css\styles.css.map" />
+    <None Include="wwwroot\lib\bootstrap\bootstrap.min.css.map" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
