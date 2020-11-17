@@ -13,6 +13,15 @@ export class TimeComponent implements OnInit {
 
   time: string;
 
+  dusk: string;
+  dawn: string;
+  sunset: string;
+  sunsetstart: string;
+  goldenhour: string;
+  solarnoon: string;
+  sunrise: string;
+
+
   constructor() {
   }
 
@@ -24,8 +33,12 @@ export class TimeComponent implements OnInit {
     var times = SunCalc.getTimes(new Date(), 51.5, -0.1);
     console.log(times);
 
+    this.dusk = times.dusk.toString().substring(0,25);
+    this.dawn = times.dawn.toString().substring(0, 25);
+    this.sunrise = times.sunrise.toString().substring(0, 25);
+    this.goldenhour = times.goldenHour.toString().substring(0, 25);
+    this.solarnoon = times.solarNoon.toString().substring(0, 25);
 
-    
 
     this.startTime();
 

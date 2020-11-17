@@ -6,7 +6,11 @@
   /*padding-bottom: 31%;*/
   position: relative;
   width: 90vw;
-  max-width:800px;
+  max-width:350px;
+  min-width:350px;
+  min-height:350px;
+  top:10vh;
+  max-height:350px;
 }
 
 
