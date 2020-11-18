@@ -5,30 +5,31 @@ using System.Threading.Tasks;
 
 namespace Treely_2020.Models.API
 {
-    public record UKCity
+    public class UKCity
     {
 
 
-    public string City { get; }
-    public float Lat { get; }
+    public string city { get; set; }
 
-    public float Lng { get; }
+        public string lat { get; set; }
 
-    public string Country { get; }
+        public string lng { get; set; }
 
-    public string ISO2 { get; }
+        public string country { get; set; }
 
-    public string Admin_Name { get; }
+        public string iso2 { get; set; }
 
-    public string Capital { get; }
+        public string admin_name { get; set; }
 
-    public int Population { get; }
+        public string capital { get; set; }
 
-    public int Population_Proper { get; }
+        public string population { get; set; }
 
-    // public Person(string first, string last) => (FirstName, LastName) = (first, last);
+        public string population_proper { get; set; }
 
-}
+        //public Person(string first, string last) => (FirstName, LastName) = (first, last);
+
+    }
        
    
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -27,8 +28,15 @@ namespace Treely_2020.Controllers.API
         [HttpGet]
         public UKCity Get()
         {
-            string contentRootPath = _hostingEnvironment.ContentRootPath;
-            var JSON = System.IO.File.ReadAllText(contentRootPath + "/data/gb.json");
+
+            var folderDetails = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"data\\gb.json"}");
+            var JSON = System.IO.File.ReadAllText(folderDetails);
+
+           // var x = RouteData;
+
+          //  string contentRootPath = _hostingEnvironment.ContentRootPath;
+            
+           // var JSON = System.IO.File.ReadAllText(HttpContext.Request.h + "/data/gb.json");
             
 
             //using (FileStream fs = File.OpenRead(fileName))
@@ -37,10 +45,10 @@ namespace Treely_2020.Controllers.API
             //}
 
 
-            var cities = JsonSerializer.Deserialize<UKCity>(JSON);
+            var cities = JsonSerializer.Deserialize<List<UKCity>>(JSON);
 
 
-            return cities;
+            return new UKCity();
         }
 
         // GET api/<UKCitiesController>/5
