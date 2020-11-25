@@ -12,8 +12,11 @@ using Treely_2020.Models.API;
 
 namespace Treely_2020.Controllers.API
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
+
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class UKCitiesController : ControllerBase
     {
 
@@ -26,18 +29,27 @@ namespace Treely_2020.Controllers.API
 
         // GET: api/<UKCitiesController>
         [HttpGet]
-        public UKCity Get()
+        public List<UKCity> Get()
         {
+
+
+            string webRootPath = _hostingEnvironment.WebRootPath;
 
             var folderDetails = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot\\{"data\\gb.json"}");
             var JSON = System.IO.File.ReadAllText(folderDetails);
 
-           // var x = RouteData;
 
-          //  string contentRootPath = _hostingEnvironment.ContentRootPath;
-            
-           // var JSON = System.IO.File.ReadAllText(HttpContext.Request.h + "/data/gb.json");
-            
+            //using (StreamReader sr = new StreamReader(Microsoft.AspNetCore.Hosting.Server.MapPath("~/Content/treatments.json")))
+            //{
+            //    treatments = JsonConvert.DeserializeObject<List<Treatment>>(sr.ReadToEnd());
+            //}
+
+            // var x = RouteData;
+
+            //  string contentRootPath = _hostingEnvironment.ContentRootPath;
+
+            // var JSON = System.IO.File.ReadAllText(HttpContext.Request.h + "/data/gb.json");
+
 
             //using (FileStream fs = File.OpenRead(fileName))
             //{
@@ -48,7 +60,7 @@ namespace Treely_2020.Controllers.API
             var cities = JsonSerializer.Deserialize<List<UKCity>>(JSON);
 
 
-            return new UKCity();
+            return cities; // new UKCity();
         }
 
         // GET api/<UKCitiesController>/5

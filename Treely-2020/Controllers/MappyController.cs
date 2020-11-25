@@ -62,7 +62,7 @@ namespace Treely_2020.Controllers
 
                 //Sending request to find web api REST service resource GetDepartments using HttpClient 
 
-                HttpResponseMessage Res = await client.GetAsync("api/regions");
+                HttpResponseMessage Res = await client.GetAsync("regions");
 
 
 
