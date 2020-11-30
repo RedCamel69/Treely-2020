@@ -11,8 +11,9 @@ using Treely_2020.Models.API;
 
 namespace Treely_2020.Controllers.API
 {
-    [Route("[controller]")]
+   
     [ApiController]
+    [Route("[controller]")]
     public class RegionsController : ControllerBase
 
     {

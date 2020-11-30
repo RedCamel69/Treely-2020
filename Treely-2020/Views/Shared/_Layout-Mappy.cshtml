@@ -17,53 +17,77 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    @*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <link rel="preload" href="~/js/site.js" as="script" />
+    <link rel="stylesheet" href="~/css/styles.css" type="text/css" inline />
+
+    <link href="~/css/blog.css" rel="stylesheet" />
+    @RenderSection("Preload", required: false)
+    @*<link rel="stylesheet" href="~/css/abovethefold.scss" inline />*@
+    <link rel="stylesheet" href="~/css/abovethefold.css" inline />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+    @*<meta property="og:url" content="@(host + Context.Request.Path)" />
+    <meta property="og:image" content="@host/img/icon72x72.png" />*@
+    <meta property="og:image:width" content="72" />
+    <meta property="og:image:height" content="72" />
+
+    <meta name="msapplication-square150x150logo" content="~/img/icon180x180.png" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/icon16x16.png" />
+    <link rel="apple-touch-icon" href="~/img/icon180x180.png" />
+    <link rel="shortcut icon" href="~/img/icon16x16.png" />
+
+    <link rel="edituri" type="application/rsd+xml" title="RSD" href="~/rsd.xml" />
+    <link rel="alternate" type="application/rss+xml" href="~/feed/rss/" />
+    <link rel="alternate" type="application/atom+xml" href="~/feed/atom/" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    @RenderSection("Head", required: false)
 </head>
 
 <body>
 
+
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="/">Home</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="about">About</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="time">Time</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="/blog">Blog</a>
+            </li>
+            <!--<li class="sidebar-nav-item">
+              <a class="js-scroll-trigger" href="visit">Visit Your Local Woodland</a>
+            </li>-->
+            <!--<li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>-->
+            <!--<li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Contact</a>
+            </li>-->
+        </ul>
+    </nav>
+
     <header>
-
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-
-            <div class="container">
-
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">mappy</a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-
-                    <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
-
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-
-                        </li>
-
-                        <li class="nav-item">
-
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </nav>
-
     </header>
 
     <div class="container">
@@ -88,15 +112,96 @@
 
     </footer>
 
-    <script src="~/lib/jquery/jquery.js"></script>
+    @*<script src="~/lib/jquery/jquery.js"></script>*@
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
 
     @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>*@
+        <script src="~/js/site.js" asp-append-version="true"></script>*@
 
+   
+
+
+    <!-- This lazy loads the stylesheet in a non-render blocking way -->
+    <link rel="preload" href="~/css/belowthefold.css" as="style" />
+    <noscript><link rel="stylesheet" href="~/css/belowthefold.css" /></noscript>
+
+    <script src="~/js/site.js" async defer></script>
     @RenderSection("Scripts", required: false)
 
+
+
+    <!-- Start Nav -->
+    <script type="text/javascript">
+        (function ($) {
+            "use strict"; // Start of use strict
+
+            // Closes the sidebar menu
+            $(".menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#sidebar-wrapper").toggleClass("active");
+                $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+                $(this).toggleClass("active");
+            });
+
+            // Smooth scrolling using jQuery easing
+            $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000, "easeInOutExpo");
+                        return false;
+                    }
+                }
+            });
+
+
+
+            // Closes responsive menu when a scroll trigger link is clicked
+            $('#sidebar-wrapper .js-scroll-trigger').click(function () {
+                $("#sidebar-wrapper").removeClass("active");
+                $(".menu-toggle").removeClass("active");
+                $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+            });
+
+            // Scroll to top button appear
+            $(document).scroll(function () {
+                var scrollDistance = $(this).scrollTop();
+                if (scrollDistance > 100) {
+                    $('.scroll-to-top').fadeIn();
+                } else {
+                    $('.scroll-to-top').fadeOut();
+                }
+            });
+
+        })(jQuery); // End of use strict
+
+        // Disable Google Maps scrolling
+        // See http://stackoverflow.com/a/25904582/1607849
+        // Disable scroll zooming and bind back the click event
+        var onMapMouseleaveHandler = function (event) {
+            var that = $(this);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
+        }
+        var onMapClickHandler = function (event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+        $('.map').on('click', onMapClickHandler);
+
+    </script>
+    <!-- End Nav -->
 </body>
 
 </html>
