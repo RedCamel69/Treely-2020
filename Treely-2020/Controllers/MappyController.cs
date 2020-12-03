@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using WebEssentials.AspNetCore.Pwa;
 
 namespace Treely_2020.Controllers
 {
@@ -21,13 +22,15 @@ namespace Treely_2020.Controllers
 
         private RegionContext _cxt;
 
-        public MappyController(ILogger<MappyController> logger, RegionContext cx)
+        private readonly WebManifest _manifest;
+
+        public MappyController(ILogger<MappyController> logger, RegionContext cx, WebManifest manifest)
 
         {
 
             _logger = logger;
-
             _cxt = cx;
+            _manifest = manifest;
 
         }
         // GET: MappyController
