@@ -16,6 +16,9 @@ export class SearchComponent implements OnInit {
 
   searchForm: FormGroup;
 
+
+  noresults: boolean;
+
   search: Search;
   results: SearchResponse;
   results2: SearchResponse;
@@ -50,7 +53,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-  
+    this.noresults = false;
 
     this.search = new Search();
     this.results = new SearchResponse();
@@ -164,13 +167,23 @@ export class SearchComponent implements OnInit {
     
     this.searchService.apisearch(phrase, count, offset).subscribe(
       data => {
-        this.results = JSON.parse(data.toString()) as SearchResponse;
-        console.log(data);
-        console.log(this.results);
-        if (this.results.webPages == undefined) {
-          console.log('some thing gone wrong');
+
+        if (data != null) {
+          this.results = JSON.parse(data.toString()) as SearchResponse;
+          console.log(data);
+          console.log(this.results);
         }
-        this.doSomething()
+        else {
+          console.log('Error getting results');
+          this.search = new Search();
+          this.results = new SearchResponse();
+          this.results.webPages = new webPages();
+          this.results.webPages.value = new Array<value>();
+          this.results.queryContext = new queryContext();
+
+          this.noresults = true;
+        }
+
       },
       err => console.error(err),
       () => {
