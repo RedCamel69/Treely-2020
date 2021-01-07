@@ -82,7 +82,7 @@ export class IndexComponent implements OnInit {
       /*Display Suggestions */
       this.values = event.target.value;
 
-      if (this.values.length > 2) {        
+      if (this.values.length > 2) {       
         this.autocomplete(this.values);
         this.hideSuggestions = false;
       }

@@ -30,7 +30,7 @@
 
       </div>
 
-      <ul [ngClass]="hideSuggestions ? 'd-none' : 'd-inline-block'" id="list">
+      <ul [ngClass]="hideSuggestions ? 'd-none' : 'd-inline-block'"  id="suggestion-list-container">
 
         <li [class.active]="currentSuggestionSelection == (i+1)" class="suggestion-list" *ngFor="let suggestion of (autocompleteResponse ? autocompleteResponse.suggestionGroups[0].searchSuggestions ? autocompleteResponse.suggestionGroups[0].searchSuggestions : [] : [] );let i = index;">
           <span (click)="useSuggestion(suggestion)">{{suggestion.displayText}}</span>
