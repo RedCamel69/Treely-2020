@@ -21,10 +21,9 @@
           </span>
         </div>
       </div>
-      <ul [ngClass]="hideSuggestions ? 'd-none' : 'd-inline-block'" id="list">
+      <ul [ngClass]="hideSuggestions ? 'd-none' : 'd-inline-block'" id="suggestion-list-container">
         <li [class.active]="currentSuggestionSelection == (i+1)" class="suggestion-list" *ngFor="let suggestion of (autocompleteResponse ? autocompleteResponse.suggestionGroups[0].searchSuggestions ? autocompleteResponse.suggestionGroups[0].searchSuggestions : [] : [] );let i = index;">
-          <span (click)="useSuggestion(suggestion)">{{suggestion.displayText
-      }} {{i}}</span>
+          <span (click)="useSuggestion(suggestion)">{{suggestion.displayText}} </span>
       </li>
       </ul>
       </form>
@@ -69,10 +68,10 @@
   </li>
 </ul>
 
-
+<div [ngClass]="{'d-none':noresults==true}">
 <div class="d-flex justify-content-center bd-highlight mb-3">
   <nav aria-label="Page navigation example">
-    <ul class="pagination">   
+    <ul class="pagination">
       <li class="page-item" *ngIf="this.currentPage>0">
         <a class="page-link" (click)="previousPage()" aria-label="Previous">
           <span aria-hidden="true">&laquo;</span>
@@ -96,11 +95,16 @@
     </ul>
   </nav>
 </div>
+</div>
 
-
-<div [ngClass]="{'d-none':noresults==false}" id="noresults" name="noresults" >
-  {{noresults}}
-  <h3>No results</h3>
+<div [ngClass]="{'d-none':noresults==false}" id="noresults" name="noresults">
+  <div style="text-align:center">
+    <span style="font-size:xx-large"> <i class="fas fa-exclamation-triangle"></i></span>
+    <br />
+    <h3>Mmmm... we have no results!</h3>
+    <br />
+    <p>Please try another search...</p>
+    </div>
 </div>
 
 

@@ -87,7 +87,7 @@ namespace Treely_2020.Controllers
 
                 // Construct the search request URI.
                 //var uriQuery = uriBase + "?q=" + Uri.EscapeDataString(searchQuery);
-                var uriQuery = uriBase + "?q=" + searchQuery  ;
+               var uriQuery = uriBase + "?q=" + searchQuery  ;
 
                 // Perform request and get a response.
                 WebRequest request = HttpWebRequest.Create(uriQuery);

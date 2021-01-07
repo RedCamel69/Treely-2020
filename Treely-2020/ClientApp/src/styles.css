@@ -618,11 +618,29 @@ a {
   text-align: center !important;
 }
 
+
+/* Suggestion List*/
+
 .suggestion-list-selected {
   background-color: blue;
 }
 
-.suggestion-list.active {
+#suggestion-list-container {
+    text-align:left;
+  border-style: solid;
+  /* border-radius: 10px; */
+  width: 98%;
+  border-width: thin;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.suggestion-list {
+    list-style-type:none;
+}
+
+.suggestion-list.active {   
   font-weight: bolder;
   font-size: larger;
+ 
 }
