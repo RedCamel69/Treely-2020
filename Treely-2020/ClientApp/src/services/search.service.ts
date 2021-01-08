@@ -31,7 +31,7 @@ export class SearchService {
 
   apisearch(searchPhrase: string, count: number, offset: number) {
 
-    console.log("/apisearch" + "?query=" + encodeURI(searchPhrase) + '&mkt=en-gb&count=' + count + '&offset=' + offset);
+    // console.log("/apisearch" + "?query=" + encodeURI(searchPhrase) + '&mkt=en-gb&count=' + count + '&offset=' + offset);
 
     return this.http.get(
       "/apisearch" + "?query=" + encodeURI(searchPhrase) + '&mkt=en-gb&count=' + count + '&offset=' + offset

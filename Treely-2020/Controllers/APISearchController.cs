@@ -18,7 +18,11 @@ namespace Treely_2020.Controllers
     {
 
         // Enter a valid subscription key.
+        
+        // cognitive
         const string accessKey = "58d95594c28f497d842d4d29b4db999d";
+
+        
         /*
          * If you encounter unexpected authorization errors, double-check this value
          * against the endpoint for your Bing Web search instance in your Azure
@@ -27,6 +31,8 @@ namespace Treely_2020.Controllers
         //const string uriBase = "https://searchapi.cognitiveservices.azure.com/";
 
         const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/search";
+
+        
 
         const string searchTerm = "Microsoft Cognitive Services";
 
@@ -51,11 +57,6 @@ namespace Treely_2020.Controllers
         [Produces("application/json")]
         public string Get(string query, int count, int offset)
         {
-
-            // https://localhost:44356/apisearch?query=united&mkt=en-gb&count=1&offset=80
-
-          // SearchResult result = BingWebSearch(query); //TODO  + "&mkt=en-gb&count=" + count + "&offset=" + offset);
-
 
 
             var myquery = query + "&count=" + count + "&offset=" + offset + "&mkt=en-gb";
@@ -86,7 +87,7 @@ namespace Treely_2020.Controllers
             {
 
                 // Construct the search request URI.
-                //var uriQuery = uriBase + "?q=" + Uri.EscapeDataString(searchQuery);
+               // var uriQuery = uriBase + "?q=" + Uri.EscapeDataString(searchQuery);
                var uriQuery = uriBase + "?q=" + searchQuery  ;
 
                 // Perform request and get a response.
@@ -185,5 +186,8 @@ namespace Treely_2020.Controllers
             }
             return sb.ToString().Trim();
         }
+
+
+
     }
 }

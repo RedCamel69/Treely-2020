@@ -162,6 +162,8 @@ export class SearchComponent implements OnInit {
     spinner.className = "fa fa-spinner fa-5x fa-spin";
 
     if (offset == 0) {
+
+      // temp remove wikipedia for performance
       this.callWikiPedia(phrase, true);
     }
     

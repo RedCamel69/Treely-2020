@@ -25,7 +25,7 @@ namespace Treely_2020.Controllers
         static string path = "/bing/v7.0/Suggestions";
         static string market = "en-US";
         static string key = "a7ee36643e85472bbf6b01a12cea2605";
-
+       
 
         private string BingAutoSuggest(string query)
         {
